@@ -8,7 +8,7 @@ public class DuplicateCountInList {
         System.out.println(countDuplicates(list));
     }
 
-    private static String countDuplicates(List<String> list) {
+    private static Map<String, Integer> countDuplicates(List<String> list) {
         Map<String, Integer> listMap = new HashMap<>();
 
         for (String item : list)  {
@@ -22,6 +22,6 @@ public class DuplicateCountInList {
             }
         }
 
-        return listMap.toString();
+        return listMap;
     }
 }

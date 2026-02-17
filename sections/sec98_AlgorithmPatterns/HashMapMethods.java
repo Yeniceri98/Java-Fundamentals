@@ -1,4 +1,4 @@
-package sections.sec99_algorithms_livecoding_practice.algorithms.HashMap_Set_Duplicate_Unique_Freq;
+package sections.sec98_AlgorithmPatterns;
 
 import java.util.*;
 
@@ -155,7 +155,7 @@ public class HashMapMethods {
     NOTE: İlk görülen index için "putIfAbsent", son görülen index için "put" kullanılır
 
     putIfAbsent(key, value): Key yoksa ekler, varsa dokunmaz
-    put(k, i):               Her seferinde map son görülen indexi günceller
+    put(k, i):               Map, her seferinde map son görülen key'e göre indexi günceller
 */
 /*
     3) Grouping

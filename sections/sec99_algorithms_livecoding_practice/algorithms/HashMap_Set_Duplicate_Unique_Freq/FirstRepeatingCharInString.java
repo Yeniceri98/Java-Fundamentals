@@ -4,12 +4,11 @@ import java.util.*;
 
 public class FirstRepeatingCharInString {
     public static void main(String[] args) {
-        System.out.println(findFirstRepeatingCharSolutionOne("abcdefab"));     // a
-        System.out.println(findFirstRepeatingCharSolutionTwo("xyz"));          // null
+        System.out.println(findFirstRepeatingChar("abcdefab"));     // a
     }
 
-    public static Character findFirstRepeatingCharSolutionOne(String input) {
-        char[] inputArray = input.toCharArray();
+    public static Character findFirstRepeatingChar(String input) {
+        char[] inputArray = input.toCharArray();    // [a, b, c, d, e, f, a, b]
         System.out.println("inputArray: " + Arrays.toString(inputArray));
 
         Set<Character> seen = new HashSet<>();
@@ -22,24 +21,6 @@ public class FirstRepeatingCharInString {
             }
         }
 
-        return null;
-    }
-
-    // Without Converting to Char Array (Better for Memory and Performance)
-    public static Character findFirstRepeatingCharSolutionTwo(String input) {
-        Set<Character> seen = new HashSet<>();
-
-        // NOTE: input.charAt() for-each içerisinde kullanılamaz çünkü for-each sadece koleksiyonlar ve dizi üzerinde çalışabilir
-        for (int i = 0; i < input.length(); i++) {
-            char letter = input.charAt(i);
-
-            if (seen.contains(letter)) {
-                return letter;
-            } else {
-                seen.add(letter);
-            }
-        }
-
-        return null;
+        return null;    // If there's no repeating char
     }
 }

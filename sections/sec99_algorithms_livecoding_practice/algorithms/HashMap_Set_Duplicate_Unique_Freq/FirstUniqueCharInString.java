@@ -4,22 +4,21 @@ import java.util.*;
 
 public class FirstUniqueCharInString {
     public static void main(String[] args) {
-        System.out.println(firstUniqueCharUsingMap("xxxyyz"));  // z
-        System.out.println(firstUniqueCharUsingSet("xxxyyz"));  // z
+        System.out.println(firstUniqueChar("xxxyyzf"));  // z
+        System.out.println(firstUniqueChar("xyz"));      // x
     }
 
-    // Better Approach
-    public static Character firstUniqueCharUsingMap(String str) {
+    public static Character firstUniqueChar(String str) {
         if (str == null || str.isEmpty()) return null;
 
         Map<Character, Integer> charMap = new HashMap<>();
 
         for (char letter : str.toCharArray()) {
-            int currentCount = charMap.getOrDefault(letter, 0);     // Map'te ilgili key varsa onun değeri yoksa 0
+            int currentCount = charMap.getOrDefault(letter, 0);     // Map'te ilgili key varsa onun değeri; yoksa 0
             charMap.put(letter, currentCount + 1);
         }
 
-        System.out.println("Final Map: " + charMap);
+        System.out.println("Final Map: " + charMap);    // {f=1, x=3, y=2, z=1}
 
         for (char letter : str.toCharArray()) {
             if (charMap.get(letter) == 1) {
@@ -28,25 +27,5 @@ public class FirstUniqueCharInString {
         }
 
         return null;
-    }
-
-    public static Character firstUniqueCharUsingSet(String str) {
-        if (str == null) return null;
-
-        Set<Character> seenOnce = new LinkedHashSet<>();
-        Set<Character> seenMultiple = new HashSet<>();
-
-        for (char letter : str.toCharArray()) {
-            if (seenMultiple.contains(letter)) {
-                continue;
-            } else if (seenOnce.contains(letter)) {
-                seenOnce.remove(letter);
-                seenMultiple.add(letter);
-            } else {
-                seenOnce.add(letter);
-            }
-        }
-
-        return seenOnce.isEmpty() ? null : seenOnce.iterator().next();
     }
 }

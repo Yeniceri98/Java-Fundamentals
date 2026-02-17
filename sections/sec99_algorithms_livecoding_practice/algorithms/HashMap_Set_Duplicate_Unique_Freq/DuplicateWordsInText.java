@@ -5,14 +5,15 @@ import java.util.*;
 public class DuplicateWordsInText {
     public static void main(String[] args) {
         String text = "Big black dog and big brown dog";
-        System.out.println(duplicateWordsUsingSet(text));
+        System.out.println(duplicateWordsUsingSet(text));   // big dog
         System.out.println(duplicateWordsUsingMap(text));
     }
 
     public static String duplicateWordsUsingSet(String text) {
         text = text.toLowerCase();
-        String[] splittedText = text.split("\\s+");
-        System.out.println("Splitted Text: " + Arrays.toString(splittedText));
+        System.out.println("Before Split: " + text);        // big black dog and big brown dog (duplicate bulabilmek için kelimelere bölmek lazım böyle olmaz)
+        String[] splittedText = text.trim().split("\\s+");  // NOTE: split(" ") şeklinde de olurdu fakat bu haliyle tüm whitespace’leri tek separator gibi treat eder
+        System.out.println("After Split: " + Arrays.toString(splittedText));    // [big, black, dog, and, big, brown, dog]
 
         Set<String> seen = new HashSet<>();
         Set<String> duplicates = new LinkedHashSet<>();
@@ -36,7 +37,7 @@ public class DuplicateWordsInText {
 
     public static String duplicateWordsUsingMap(String text) {
         text = text.toLowerCase();
-        String[] splittedText = text.split("\\s+");
+        String[] splittedText = text.trim().split("\\s+");
         System.out.println("Splitted Text: " + Arrays.toString(splittedText));
 
         Map<String, Integer> wordsMap = new HashMap<>();

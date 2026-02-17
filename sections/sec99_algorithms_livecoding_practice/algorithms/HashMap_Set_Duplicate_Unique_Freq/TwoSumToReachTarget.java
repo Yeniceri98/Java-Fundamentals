@@ -12,27 +12,24 @@ public class TwoSumToReachTarget {
         System.out.println(result[0] + ", " + result[1]);   // 0, 3
     }
 
-    public static int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> numMap = new HashMap<>();
 
-        System.out.println("target: " + target + "\n");
+    public static int[] twoSum(int[] numbers, int target) {
+        Map<Integer, Integer> valueToIndexMap = new HashMap<>();
 
-        for (int i = 0; i < nums.length; i++) {
-            int complement = target - nums[i];
-            System.out.println("nums[i]: " + nums[i]);
-            System.out.println("complement: " + complement);
+        for (int currentIndex = 0; currentIndex < numbers.length; currentIndex++) {
+            int currentValue = numbers[currentIndex];
+            int neededValue = target - currentValue;
 
-            // If the complement exists in the map, we found our pair
-            if (numMap.containsKey(complement)) {
-                return new int[] { numMap.get(complement), i };
+            // Aranan değer (needed value) map'te varsa sonucu bulduk demektir
+            if (valueToIndexMap.containsKey(neededValue)) {
+                int foundIndex = valueToIndexMap.get(neededValue);
+                return new int[]{foundIndex, currentIndex};
             }
 
-            // Store the current number and its index
-            numMap.put(nums[i], i);
-            System.out.println("numMap: " + numMap + "\n");
+            // Mevcut değeri map'e ekle
+            valueToIndexMap.put(currentValue, currentIndex);
         }
 
-        // No solution found
-        return new int[0];
+        throw new IllegalArgumentException("No two sum solution found");
     }
 }
