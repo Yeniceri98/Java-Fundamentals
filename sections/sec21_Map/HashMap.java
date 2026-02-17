@@ -1,6 +1,5 @@
 package sections.sec21_Map;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /*
@@ -18,9 +17,9 @@ import java.util.Map;
     Adding to the HashMap is done through the "put(key, value)" method that has two parameters, one for the key, the other for the value
     Retrieving from a HashMap happens with the help of the "get(key)" method that is passed the key as a parameter and returns a value
 */
-public class Main {
+public class HashMap {
     public static void main(String[] args) {
-        HashMap<String, String> postalCodes = new HashMap<>();
+        java.util.HashMap<String, String> postalCodes = new java.util.HashMap<>();
         postalCodes.put("1111", "Helsinki");        // key: 1111, value: Helsinki
         postalCodes.put("2222", "Tokyo");
         postalCodes.put("3333", "London");
@@ -43,7 +42,7 @@ public class Main {
         }
 
         // If the HashMap does not contained the key used for the search, its get method returns a "null" reference:
-        HashMap<String, String> numbers = new HashMap<>();
+        java.util.HashMap<String, String> numbers = new java.util.HashMap<>();
         numbers.put("Bir", "One");
         numbers.put("İki", "Two");
 
@@ -56,7 +55,7 @@ public class Main {
 
 
         // Example: Nicknames
-        HashMap<String, String> names = new HashMap<>();
+        java.util.HashMap<String, String> names = new java.util.HashMap<>();
         names.put("Matthew", "Matt");
         names.put("Michael", "Mike");
         names.put("Arthur", "Artie");
@@ -69,7 +68,7 @@ public class Main {
         // Using Same Value Type More Than One
         // The HashMap has a maximum of 1 value per key
         // If a new key-value pair is added to the HashMap, but the key has already been associated with some other value stored in the HashMap, the old value will vanish from the HashMap
-        HashMap<Integer, String> queue = new HashMap<>();
+        java.util.HashMap<Integer, String> queue = new java.util.HashMap<>();
         queue.put(1, "Ahmet");
         queue.put(2, "Jasmine");
         queue.put(1, "Jack");
@@ -78,7 +77,7 @@ public class Main {
 
 
         // Loop Through a HashMap
-        HashMap<Integer, String> cityCode = new HashMap<>();
+        java.util.HashMap<Integer, String> cityCode = new java.util.HashMap<>();
         cityCode.put(1, "Adana");
         cityCode.put(34, "Istanbul");
         cityCode.put(53, "Rize");
@@ -99,7 +98,7 @@ public class Main {
         Book firstBook = new Book("Lord of the Rings", 1995, "Written by Tolkien");
         Book secondBook = new Book("Harry Potter", 2000, "Written by J. K. Rowling");
 
-        HashMap<String, Book> directory = new HashMap<>();
+        java.util.HashMap<String, Book> directory = new java.util.HashMap<>();
         directory.put(firstBook.getName(), firstBook);
         directory.put(secondBook.getName(), secondBook);
 
