@@ -1,4 +1,4 @@
-package sections.sec22_Set_HashSet;
+package sections.sec22_Set;
 
 import java.util.HashSet;
 import java.util.Set;

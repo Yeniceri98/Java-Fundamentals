@@ -1,4 +1,4 @@
-package sections.sec21_Map_HashMap;
+package sections.sec21_Map;
 
 public class Book {
     private String name;

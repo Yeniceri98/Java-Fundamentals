@@ -1,4 +1,4 @@
-package sections.sec19_Lists;
+package sections.sec19_List;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
