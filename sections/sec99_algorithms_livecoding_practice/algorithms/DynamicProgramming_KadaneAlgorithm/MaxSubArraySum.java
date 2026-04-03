@@ -1,4 +1,4 @@
-package sections.sec99_algorithms_livecoding_practice.algorithms.DynamicProgramming;
+package sections.sec99_algorithms_livecoding_practice.algorithms.DynamicProgramming_KadaneAlgorithm;
 
 public class MaxSubArraySum {
     public static void main(String[] args) {

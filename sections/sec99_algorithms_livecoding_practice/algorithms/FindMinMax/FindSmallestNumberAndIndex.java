@@ -1,4 +1,4 @@
-package sections.sec99_algorithms_livecoding_practice.algorithms.SearchAlgorithms_FindMinMax;
+package sections.sec99_algorithms_livecoding_practice.algorithms.FindMinMax;
 
 import java.util.Arrays;
 import java.util.List;
