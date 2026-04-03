@@ -3,7 +3,7 @@ package sections.sec99_algorithms_livecoding_practice.algorithms.SlidingWindow;
 public class LongestIncreasingContiguousSubArray {
     public static void main(String[] args) {
         int[] array = {1, 2, 2, 3, 4, 6, 1, 5, 7};
-        System.out.println(findLengthOfLongestIncreasingContiguousSubArray(array));     // 4 (2-3-4-6)
+        System.out.println(findLengthOfLongestIncreasingContiguousSubArray(array));     // Returns 4 (2, 3, 4, 6)
     }
 
     public static int findLengthOfLongestIncreasingContiguousSubArray(int[] arr) {

@@ -7,9 +7,9 @@ package sections.sec99_algorithms_livecoding_practice.algorithms.SearchAlgorithm
 public class LinearSearch {
     public static void main(String[] args) {
         int[] array = {1, 3, 7, 15, 43, 12};
-        int targetNumLinear = 15;
-        int targetIndexLinear = LinearSearch.linearSearch(array, targetNumLinear);
-        System.out.println("Target " + targetNumLinear + " found at index " + targetIndexLinear);       // Returns 3
+        int targetNumber = 15;
+        int targetIndex = linearSearch(array, targetNumber);
+        System.out.println("Target number " + targetNumber + " found at index " + targetIndex);       // Returns 3
     }
 
     public static int linearSearch(int[] array, int target) {

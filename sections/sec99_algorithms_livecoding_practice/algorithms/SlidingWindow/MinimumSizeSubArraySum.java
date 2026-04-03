@@ -3,7 +3,8 @@ package sections.sec99_algorithms_livecoding_practice.algorithms.SlidingWindow;
 public class MinimumSizeSubArraySum {
     public static void main(String[] args) {
         int[] array = {3, 1, 5, 7, 2, 9, 10};
-        System.out.println(minLengthSubArrayWithSumAtLeast(array, 23));  // Returns 4 (5 + 7 + 2 + 9)
+        int target = 22;
+        System.out.println(minLengthSubArrayWithSumAtLeast(array, target));  // Returns 4 (5 + 7 + 2 + 9 = 23)
     }
 
     private static int minLengthSubArrayWithSumAtLeast(int[] array, int target) {
@@ -26,4 +27,4 @@ public class MinimumSizeSubArraySum {
     }
 }
 
-// Toplamı en az target kadar olan en kısa subarray’in uzunluğunu bulma. Yani örneğe göre toplamı 23'ü geçen minimum pencere aralığı
+// Toplamı en az target kadar olan en kısa subarray’in uzunluğunu bulma. Yani örneğe göre toplamı 22'yi geçen minimum pencere aralığı

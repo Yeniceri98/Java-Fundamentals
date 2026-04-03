@@ -13,9 +13,9 @@ public class BinarySearch {
     public static void main(String[] args) {
         int[] array = {3, 5, 7, 12, 8, 54, 23, 85, 4, 74, 93};
         Arrays.sort(array);  // It has to be sorted array
-        int targetNumBinary = 7;
-        int targetIndexBinary = binarySearch(array, targetNumBinary);
-        System.out.println("Target " + targetNumBinary + " found at index " + targetIndexBinary);
+        int targetNumber = 7;
+        int targetIndex = binarySearch(array, targetNumber);
+        System.out.println("Target number " + targetNumber + " found at index " + targetIndex);
     }
 
     public static int binarySearch(int[] nums, int target) {

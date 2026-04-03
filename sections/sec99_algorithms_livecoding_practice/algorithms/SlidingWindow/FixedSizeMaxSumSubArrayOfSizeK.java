@@ -13,7 +13,7 @@ public class FixedSizeMaxSumSubArrayOfSizeK {
 
         int windowSum = 0;
 
-        // İlk k'ya kadarki elemanların toplamını yazdırır (4+1+7)
+        // İlk k'ya kadarki elemanların toplamını yazdırır (4 + 1 + 7)
         for (int i = 0; i < k; i++) {
             windowSum += array[i];
         }
@@ -22,9 +22,9 @@ public class FixedSizeMaxSumSubArrayOfSizeK {
         int maxSum = windowSum;
 
         // İlk index olarak k değerini baz alıp sağa doğru kaydırmaya başlar
-        for (int right = k; right < array.length; right++) {
-            windowSum += array[right];      // Sağa kaydırıp ekler
-            windowSum -= array[right - k];  // En soldakini çıkarır
+        for (int i = k; i < array.length; i++) {
+            windowSum += array[i];      // Sağa kaydırıp ekler
+            windowSum -= array[i - k];  // En soldakini çıkarır
             maxSum = Math.max(maxSum, windowSum);
         }
 
