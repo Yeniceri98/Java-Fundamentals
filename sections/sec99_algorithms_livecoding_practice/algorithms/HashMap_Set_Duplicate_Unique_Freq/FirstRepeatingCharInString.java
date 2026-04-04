@@ -4,16 +4,14 @@ import java.util.*;
 
 public class FirstRepeatingCharInString {
     public static void main(String[] args) {
-        System.out.println(findFirstRepeatingChar("abcdefab"));     // a
+        System.out.println(findFirstRepeatingCharUsingSet("abcdefab"));  // a
+        System.out.println(findFirstRepeatingCharUsingMap("abcdefab"));  // a
     }
 
-    public static Character findFirstRepeatingChar(String input) {
-        char[] inputArray = input.toCharArray();    // [a, b, c, d, e, f, a, b]
-        System.out.println("inputArray: " + Arrays.toString(inputArray));
-
+    public static Character findFirstRepeatingCharUsingSet(String input) {
         Set<Character> seen = new HashSet<>();
 
-        for (char letter : inputArray) {
+        for (char letter : input.toCharArray()) {
             if (seen.contains(letter)) {
                 return letter;
             } else {
@@ -22,5 +20,22 @@ public class FirstRepeatingCharInString {
         }
 
         return null;    // If there's no repeating char
+    }
+
+    public static Character findFirstRepeatingCharUsingMap(String input) {
+        Map<Character, Integer> freqMap = new LinkedHashMap<>();    // LinkedHashMap, insertion order sağlar
+
+        for (char letter : input.toCharArray()) {
+            int currentCount = freqMap.getOrDefault(letter, 0);
+            freqMap.put(letter, currentCount + 1);
+        }
+
+        for (Map.Entry<Character, Integer> entry : freqMap.entrySet()) {
+            if (entry.getValue() > 1) {
+                return entry.getKey();
+            }
+        }
+
+        return null;
     }
 }

@@ -13,8 +13,8 @@ public class FirstAndLastSeenIndex {
         Map<Character, Integer> firstIndex = new HashMap<>();
 
         for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            firstIndex.putIfAbsent(c, i);   // Key yoksa ekler, varsa dokunmaz
+            char letter = text.charAt(i);
+            firstIndex.putIfAbsent(letter, i);   // Key yoksa ekler, varsa dokunmaz
         }
 
         return firstIndex;
@@ -24,8 +24,8 @@ public class FirstAndLastSeenIndex {
         Map<Character, Integer> lastIndex = new HashMap<>();
 
         for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            lastIndex.put(c, i);        // Map, her seferinde map son görülen key'e göre indexi günceller
+            char letter = text.charAt(i);
+            lastIndex.put(letter, i);        // Map, her seferinde map son görülen key'e göre indexi günceller
         }
 
         return lastIndex;

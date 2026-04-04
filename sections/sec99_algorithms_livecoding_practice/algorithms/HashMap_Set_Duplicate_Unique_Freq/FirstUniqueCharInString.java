@@ -4,11 +4,12 @@ import java.util.*;
 
 public class FirstUniqueCharInString {
     public static void main(String[] args) {
-        System.out.println(firstUniqueChar("xxxyyzf"));  // z
-        System.out.println(firstUniqueChar("xyz"));      // x
+        System.out.println(firstUniqueCharSolutionOne("xxxyyzf"));  // z
+        System.out.println(firstUniqueCharSolutionTwo("xxxyyzf"));  // z
+        System.out.println(firstUniqueCharSolutionTwo("xyz"));      // x
     }
 
-    public static Character firstUniqueChar(String str) {
+    public static Character firstUniqueCharSolutionOne(String str) {
         if (str == null || str.isEmpty()) return null;
 
         Map<Character, Integer> charMap = new HashMap<>();
@@ -27,5 +28,23 @@ public class FirstUniqueCharInString {
         }
 
         return null;
+    }
+
+    public static Character firstUniqueCharSolutionTwo(String str) {
+        Map<Character, Integer> freqMap = new LinkedHashMap<>();    // LinkedHashMap: Bu çözüm için insertion order şart
+
+        for (char letter : str.toCharArray()) {
+            int currentCount = freqMap.getOrDefault(letter, 0);
+            freqMap.put(letter, currentCount + 1);
+        }
+
+        for (Map.Entry<Character, Integer> entry : freqMap.entrySet()) {
+            if (entry.getValue() == 1) {
+                return entry.getKey();
+            }
+        }
+
+        return null;
+
     }
 }

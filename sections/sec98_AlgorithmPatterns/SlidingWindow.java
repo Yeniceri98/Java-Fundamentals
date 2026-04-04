@@ -7,7 +7,7 @@ public class SlidingWindow {
         // EX 1 - Fixed Size: Finding the largest sum of subsequences of length k
         int[] nums = {2, 1, 5, 1, 3, 2};
         int k = 3;
-        //System.out.println(maxSum(nums, k));    // Returns 9 (5 + 1 + 3)
+        System.out.println(maxSum(nums, k));    // Returns 9 (5 + 1 + 3)
 
         // EX 2 - Flexible Size: Finding the longest non-repeating substring in a given string
         String str = "abcdbcbb";
