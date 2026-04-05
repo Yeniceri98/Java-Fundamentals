@@ -1,6 +1,7 @@
 package sections.sec1_Basics;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Date;
 
 public class Main {
@@ -23,6 +24,18 @@ public class Main {
         System.out.println(pi);
         System.out.println(isAdult);
 
+        // String -> Char Special Condition
+        /*
+            PrintStream.println(char[]) özel overload’a sahiptir.
+            char[] için JVM, array’i String gibi basar.
+            Yani karakterleri yan yana yazar.
+            Bu özel davranış sadece char[] içindir (İlk print'teki abcd)
+        */
+        String input = "abcd";
+        char[] inputArray = input.toCharArray();
+
+        System.out.println(inputArray);                     // abcd
+        System.out.println(Arrays.toString(inputArray));    // [a, b, c, d]
 
         // TYPE CONVERSIONS
         /*
